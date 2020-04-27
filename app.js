@@ -1,11 +1,18 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NzAwMDk5NTQwNDAwNzM0MjI5.XpeFjw.qJtm24qRdXLaIh4tmfRurG4zldQ';
+require('dotenv-flow').config();
 
-const prefix = "!";
-const serverID = '689422588660809730';
-const channelID = '700107648527237221';
+const config = {
+    token: process.env.TOKEN,
+    prefix: process.env.PREFIX,
+    channel: process.env.CHANNEL
+}
 
-var lab;
-client.login(token);
 
+client.login(config.token);
+
+
+
+client.on('ready', () => {
+    client.channels.cache.get(config.channel).send("I'm Up !");
+})
