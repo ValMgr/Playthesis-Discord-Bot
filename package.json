@@ -1,0 +1,12 @@
+{
+  "author": "Valentin Magry",
+  "name": "zartak42",
+  "description": "Discord bot training",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  }
+}
